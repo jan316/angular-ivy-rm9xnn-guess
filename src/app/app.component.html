@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img class="cover" [src]="actors[a].photo" />
+    </figure>
+  </div>
+  <div class="card-content">
+    <p class="title is-4">{{ actors[a].name }}</p>
+    <button class="button is-link">{{ actors[a].name }}</button>
+    <button class="button is-link">{{ actors[b].name }}</button>
+    <button class="button is-link">{{ actors[c].name }}</button>
+  </div>
+  <div class="card-content">
+    <button (click)="onButtonClick()" class="button is-primary is-fullwidth">
+      Go!
+    </button>
+  </div>
+</div>
