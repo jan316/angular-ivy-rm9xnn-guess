@@ -1,18 +1,18 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  arr: Array<number>;
+  arr: Array<number> = [0,0,0];
+  count: number = 0;
+  score: number = 0;
   a: number = 0;
   b: number = 0;
   c: number = 0;
-  position1: number = 0;
-  position2: number = 0;
-  position3: number = 0;
+
 
   actors = [
     {
@@ -67,28 +67,36 @@ export class AppComponent {
     },
   ];
 
-  onButtonClick() {
+  onGoClick() {
     let arr = [];
-    while (arr.length < 3) {
-      let r = Math.floor(Math.random() * this.actors.length) + 1;
+    while (arr.length < 3)
+    {
+      let r = Math.floor(Math.random() * this.actors.length - 1) + 1;
       if (arr.indexOf(r) === -1) arr.push(r);
     }
 
-    let position = [];
-    while (position.length < 3) {
-      let r = Math.floor(Math.random() * 3) + 1;
-      if (position.indexOf(r) === -1) position.push(r);
+
+    this.a = arr[0];
+    this.b = arr[1];
+    this.c = arr[2];
+
+    console.log(this.a, this.b, this.c);
+
+    let ul: any = document.querySelector('ul');
+    for (let i = ul.children.length; i >= 0; i--) {
+      ul.appendChild(ul.children[Math.random() * i | 0]);
     }
 
-    this.position1 = position[0];
-    this.position2 = position[1];
-    this.position3 = position[2];
+    this.count = this.count+1;
+    console.log(this.count);
 
-    this.a = arr[this.position1];
-    this.b = arr[this.position2];
-    this.c = arr[this.position3];
 
-    console.log(this.position1, this.position2, this.position3);
-    console.log(this.a, this.b, this.c);
+
+
   }
+
+  onRestartClick() {
+    window.location.reload()
+  }
+
 }
