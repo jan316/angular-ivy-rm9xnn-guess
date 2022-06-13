@@ -70,13 +70,13 @@ export class AppComponent {
   onButtonClick() {
     let arr = [];
     while (arr.length < 3) {
-      let r = Math.floor(Math.random() * this.actors.length - 1) + 1;
+      let r = Math.floor(Math.random() * this.actors.length) + 1;
       if (arr.indexOf(r) === -1) arr.push(r);
     }
 
     let position = [];
     while (position.length < 3) {
-      let r = Math.floor(Math.random() * 2) + 1;
+      let r = Math.floor(Math.random() * 3) + 1;
       if (position.indexOf(r) === -1) position.push(r);
     }
 
