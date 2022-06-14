@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+
+
+
+export class AppComponent implements OnInit {
+
   arr: Array<number> = [0,0,0];
   count: number = 0;
   score: number = 0;
@@ -93,6 +97,10 @@ export class AppComponent {
 
 
 
+  }
+
+  ngOnInit() {
+    this.onGoClick()
   }
 
   onRestartClick() {
