@@ -1,0 +1,48 @@
+<div class="layout-box">
+<div class="top-bar is-centered">
+  <h1 class="title is-centered">Víte kdo jsem?</h1>
+</div>
+
+<div class="page-content">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img class="cover" [src]="actors[a].photo" alt="image of an actor" />
+      </figure>
+    </div>
+
+    <div class="card-content has-text-centered">
+      <p *ngIf="count >= 10" class="title is-4">{{ score }}</p>
+
+      <ul>
+        <li>
+          <button class="button is-link">{{ actors[a].name }}</button>
+        </li>
+        <li>
+          <button class="button is-link">{{ actors[b].name }}</button>
+        </li>
+        <li>
+          <button class="button is-link">{{ actors[c].name }}</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card-content">
+      <button
+        *ngIf="count < 10"
+        (click)="onGoClick()"
+        class="button is-primary is-fullwidth"
+      >
+        Go!
+      </button>
+      <button
+        *ngIf="count === 10"
+        (click)="onRestartClick()"
+        class="button is-success is-light is-fullwidth"
+      >
+        Restart!
+      </button>
+    </div>
+  </div>
+</div>
+</div>
