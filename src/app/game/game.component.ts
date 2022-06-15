@@ -13,7 +13,6 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.actors = this._actorsService.getActors;
-    this.onGoClick();
     }
 
   arr: Array<number> = [0, 0, 0];
