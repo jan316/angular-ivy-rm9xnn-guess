@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ActorsService } from '../actors.service';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
+  public actors: any = [];
 
-  public actors = [];
+  constructor(private _actorsService: ActorsService) {}
 
-  constructor() { }
+  ngOnInit() {
+    this.actors = this._actorsService.getActors;
+    this.onGoClick();
+  }
 
   arr: Array<number> = [0, 0, 0];
   count: number = 0;
@@ -17,8 +22,6 @@ export class GameComponent implements OnInit {
   a: number = 0;
   b: number = 0;
   c: number = 0;
-
-  
 
   onGoClick() {
     let arr = [];
@@ -40,10 +43,6 @@ export class GameComponent implements OnInit {
 
     this.count = this.count + 1;
     console.log(this.count);
-  }
-
-  ngOnInit() {
-    this.onGoClick();
   }
 
   onRestartClick() {
