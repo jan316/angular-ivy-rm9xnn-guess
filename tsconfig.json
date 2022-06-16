@@ -1,11 +1,10 @@
-{
-  "resolveJsonModule": true,
+{"resolveJsonModule": true,
 "esModuleInterop": true,
 "allowSyntheticDefaultImports": true,
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "build/",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
