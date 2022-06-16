@@ -5,7 +5,7 @@ import { ActorsData } from './actors';
 
 @Injectable()
 export class ActorsService {
-  private _url: string = 'https://tyll.tech/actors.json';
+  private _url: string = './assets/actors.json';
 
   constructor(private http: HttpClient) {}
 
