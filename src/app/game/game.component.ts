@@ -13,6 +13,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this._actorsService.getActors().subscribe((data) => (this.actors = data));
+    console.log(this.actors);
   }
 
   arr: Array<number> = [0, 0, 0];
