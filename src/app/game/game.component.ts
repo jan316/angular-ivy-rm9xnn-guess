@@ -13,7 +13,8 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.actors = this._actorsService.getActors;
-    }
+    console.log(this.actors);
+  }
 
   arr: Array<number> = [0, 0, 0];
   count: number = 0;
@@ -43,8 +44,6 @@ export class GameComponent implements OnInit {
     this.count = this.count + 1;
     console.log(this.count);
   }
-
-
 
   onRestartClick() {
     window.location.reload();
