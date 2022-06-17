@@ -59,6 +59,6 @@ export class GameComponent implements OnInit {
   }
 
   onRestartClick() {
-    window.location.reload();
+    this.ngOnInit();
   }
 }
