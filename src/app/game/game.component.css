@@ -1,27 +1,5 @@
-.layout-box {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-}
-
-  .page-content {
-    flex-grow: 1;
-    overflow-y: scroll;
-  }
-
-
-.card {
-  width: auto;
-  margin: 10px;
-}
-
 .cover {
   object-fit: cover;
-}
-
-.card-content {
-  flex-flow: column;
 }
 
 .button {
