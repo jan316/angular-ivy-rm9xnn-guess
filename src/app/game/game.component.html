@@ -3,11 +3,11 @@
     <p class="title">Víš kdo jsem?</p>
     <p class="subtitle">Zkus hádat!</p>
     <figure class="image is-1by1">
-      <img class=" cover" [src]="actors[a].photo" alt="image of an actor" />
+      <img class="cover" [src]="actors[a].photo" alt="image of an actor" />
     </figure>
   </article>
 
-  <article class="tile is-child notification is-danger">
+  <article class="tile is-child notification is-warning">
     <p *ngIf="count >= 10" class="title is-4">{{ score }}</p>
 
     <ul>
@@ -17,10 +17,14 @@
         </button>
       </li>
       <li>
-        <button class="button is-link">{{ actors[b].name }}</button>
+        <button class="button" (click)="clickEvent()" [ngClass]="status">
+          {{ actors[b].name }}
+        </button>
       </li>
       <li>
-        <button class="button is-link">{{ actors[c].name }}</button>
+        <button class="button" (click)="clickEvent2()" [ngClass]="status2">
+          {{ actors[c].name }}
+        </button>
       </li>
     </ul>
 

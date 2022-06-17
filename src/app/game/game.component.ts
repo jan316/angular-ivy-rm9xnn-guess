@@ -22,6 +22,16 @@ export class GameComponent implements OnInit {
   a: number = 0;
   b: number = 0;
   c: number = 0;
+  status: string = 'is-link';
+  status2: string = 'is-link';
+
+  clickEvent() {
+    this.status = 'is-danger';
+  }
+
+  clickEvent2() {
+    this.status2 = 'is-danger';
+  }
 
   onGoClick() {
     let arr = [];
@@ -43,6 +53,9 @@ export class GameComponent implements OnInit {
 
     this.count = this.count + 1;
     console.log(this.count);
+
+    this.status = 'is-link';
+    this.status2 = 'is-link';
   }
 
   onRestartClick() {
