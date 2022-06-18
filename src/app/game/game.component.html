@@ -1,4 +1,4 @@
-<div class="tile is-parent is-vertical is-5">
+<div class="tile is-child is-vertical is-5">
   <article class="tile is-child notification is-info">
     <p class="title">Víš kdo jsem?</p>
     <p class="subtitle">Zkus hádat!</p>
@@ -10,37 +10,34 @@
   <article class="tile is-child notification is-warning">
     <p *ngIf="count >= 10" class="title is-4">{{ score }}</p>
 
-    <ul>
+    <ul class="menu-list">
       <li>
-        <button (click)="onGoClick()" class="button is-link">
+        <a (click)="onGoClick()" class="button is-link">
           {{ actors[a].name }}
-        </button>
+        </a>
       </li>
       <li>
-        <button class="button" (click)="clickEvent()" [ngClass]="status">
+        <a class="button" (click)="clickEvent()" [ngClass]="status">
           {{ actors[b].name }}
-        </button>
+        </a>
       </li>
       <li>
-        <button class="button" (click)="clickEvent2()" [ngClass]="status2">
+        <a class="button" (click)="clickEvent2()" [ngClass]="status2">
           {{ actors[c].name }}
-        </button>
+        </a>
       </li>
     </ul>
-
-    <button
-      *ngIf="count < 10"
-      (click)="onGoClick()"
-      class="button is-primary is-4by3"
-    >
-      Go!
-    </button>
-    <button
-      *ngIf="count === 10"
-      (click)="onRestartClick()"
-      class="button is-success is-light is-fullwidth"
-    >
-      Restart!
-    </button>
+    <div class="menu">
+      <a *ngIf="count < 10" (click)="onGoClick()" class="button is-primary">
+        Go!
+      </a>
+      <button
+        *ngIf="count === 10"
+        (click)="onRestartClick()"
+        class="button is-success is-light is-fullwidth"
+      >
+        Restart!
+      </button>
+    </div>
   </article>
 </div>
