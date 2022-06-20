@@ -58,8 +58,4 @@ export class GameComponent implements OnInit {
     this.status = 'is-link';
     this.status2 = 'is-link';
   }
-
-  onRestartClick() {
-    this.ngOnInit();
-  }
 }

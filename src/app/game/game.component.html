@@ -6,7 +6,7 @@
       <img class="cover" [src]="actors[a].photo" alt="image of an actor" />
     </figure>
     <div class="tile is-child notification is-warning">
-      <p class="title is-4">{{ score }}</p>
+      <p *ngIf="count > 0" class="title is-4">{{ score }}</p>
 
       <ul class="menu-list">
         <li>
@@ -36,7 +36,7 @@
           </a>
         </li>
       </ul>
-      <div class="menu">
+      <div class="menu-list">
         <!-- <a
           *ngIf="count < 10"
           (click)="onGoClick()"
