@@ -2,37 +2,53 @@
   <div class="tile is-child notification is-info">
     <p class="title">Víš kdo jsem?</p>
     <p class="subtitle">Zkus hádat!</p>
-    <figure class="image is-1by1">
+    <figure class="image is-3by4">
       <img class="cover" [src]="actors[a].photo" alt="image of an actor" />
     </figure>
     <div class="tile is-child notification is-warning">
-      <p *ngIf="count >= 10" class="title is-4">{{ score }}</p>
+      <p class="title is-4">{{ score }}</p>
 
       <ul class="menu-list">
         <li>
-          <a (click)="onGoClick()" class="button is-link">
+          <a
+            class="button is-block is-fullwidth is-link is-medium is-rounded"
+            (click)="onGoClick()"
+          >
             {{ actors[a].name }}
           </a>
         </li>
         <li>
-          <a class="button" (click)="clickEvent()" [ngClass]="status">
+          <a
+            class="button is-block is-fullwidth is-link is-medium is-rounded"
+            (click)="clickEvent()"
+            [ngClass]="status"
+          >
             {{ actors[b].name }}
           </a>
         </li>
         <li>
-          <a class="button" (click)="clickEvent2()" [ngClass]="status2">
+          <a
+            class="button is-block is-fullwidth is-link is-medium is-rounded"
+            (click)="clickEvent2()"
+            [ngClass]="status2"
+          >
             {{ actors[c].name }}
           </a>
         </li>
       </ul>
       <div class="menu">
-        <a *ngIf="count < 10" (click)="onGoClick()" class="button is-primary">
+        <!-- <a
+          *ngIf="count < 10"
+          (click)="onGoClick()"
+          class="button is-block is-fullwidth is-primary is-medium is-rounded"
+        >
           Go!
-        </a>
+        </a> -->
+
         <button
           *ngIf="count === 10"
-          (click)="onRestartClick()"
-          class="button is-success is-light is-fullwidth"
+          (click)="onGoClick()"
+          class="button is-block is-fullwidth is-primary is-medium is-rounded"
         >
           Restart!
         </button>

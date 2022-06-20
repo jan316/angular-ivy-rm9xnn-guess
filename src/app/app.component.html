@@ -1,9 +1,21 @@
 <div class="field">
   <div class="tile is-child notification is-warning">
-    <nav>
-      <a class="button is-primary" routerLink="/">Home</a>
-      <a class="button is-primary" routerLink="/game">Start</a>
-    </nav>
+    <ul class="menu-list">
+      <li>
+        <a
+          class="button is-block is-fullwidth is-primary is-medium is-rounded"
+          routerLink="/"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          class="button is-block is-fullwidth is-primary is-medium is-rounded"
+          routerLink="/game"
+          >Start</a
+        >
+      </li>
+    </ul>
   </div>
 </div>
 <router-outlet></router-outlet>
