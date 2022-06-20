@@ -1,43 +1,42 @@
-<div class="tile is-child is-vertical is-5">
-  <article class="tile is-child notification is-info">
+<div class="field">
+  <div class="tile is-child notification is-info">
     <p class="title">Víš kdo jsem?</p>
     <p class="subtitle">Zkus hádat!</p>
     <figure class="image is-1by1">
       <img class="cover" [src]="actors[a].photo" alt="image of an actor" />
     </figure>
-  </article>
+    <div class="tile is-child notification is-warning">
+      <p *ngIf="count >= 10" class="title is-4">{{ score }}</p>
 
-  <article class="tile is-child notification is-warning">
-    <p *ngIf="count >= 10" class="title is-4">{{ score }}</p>
-
-    <ul class="menu-list">
-      <li>
-        <a (click)="onGoClick()" class="button is-link">
-          {{ actors[a].name }}
+      <ul class="menu-list">
+        <li>
+          <a (click)="onGoClick()" class="button is-link">
+            {{ actors[a].name }}
+          </a>
+        </li>
+        <li>
+          <a class="button" (click)="clickEvent()" [ngClass]="status">
+            {{ actors[b].name }}
+          </a>
+        </li>
+        <li>
+          <a class="button" (click)="clickEvent2()" [ngClass]="status2">
+            {{ actors[c].name }}
+          </a>
+        </li>
+      </ul>
+      <div class="menu">
+        <a *ngIf="count < 10" (click)="onGoClick()" class="button is-primary">
+          Go!
         </a>
-      </li>
-      <li>
-        <a class="button" (click)="clickEvent()" [ngClass]="status">
-          {{ actors[b].name }}
-        </a>
-      </li>
-      <li>
-        <a class="button" (click)="clickEvent2()" [ngClass]="status2">
-          {{ actors[c].name }}
-        </a>
-      </li>
-    </ul>
-    <div class="menu">
-      <a *ngIf="count < 10" (click)="onGoClick()" class="button is-primary">
-        Go!
-      </a>
-      <button
-        *ngIf="count === 10"
-        (click)="onRestartClick()"
-        class="button is-success is-light is-fullwidth"
-      >
-        Restart!
-      </button>
+        <button
+          *ngIf="count === 10"
+          (click)="onRestartClick()"
+          class="button is-success is-light is-fullwidth"
+        >
+          Restart!
+        </button>
+      </div>
     </div>
-  </article>
+  </div>
 </div>
