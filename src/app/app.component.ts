@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActorsService } from './actors.service';
 
 @Component({
   selector: 'my-app',
@@ -6,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
