@@ -14,6 +14,16 @@ export class GameComponent implements OnInit {
   ngOnInit() {
     this._actorsService.getActors().subscribe((data) => (this.actors = data));
     console.log(this.actors);
+    
+    let arr = [];
+    while (arr.length < 3) {
+      let r = Math.floor(Math.random() * this.actors.length - 1) + 1;
+      if (arr.indexOf(r) === -1) arr.push(r);
+    }
+
+    this.a = arr[0];
+    this.b = arr[1];
+    this.c = arr[2];
   }
 
   arr: Array<number> = [0, 0, 0];
