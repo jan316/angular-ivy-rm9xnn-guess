@@ -1,4 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { ActorsData } from '../actors';
 import { ActorsService } from '../actors.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { ActorsService } from '../actors.service';
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
-  public actors: any[];
+  public actors: ActorsData[];
 
   constructor(private _actorsService: ActorsService) {}
 
