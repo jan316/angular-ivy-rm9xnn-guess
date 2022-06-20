@@ -23,6 +23,10 @@ export class GameComponent implements OnInit {
   a: number = 0;
   b: number = 0;
   c: number = 0;
+  d: number = 0;
+  e: number = 0;
+  f: number = 0;
+
   status: string = 'is-link';
   status2: string = 'is-link';
 
@@ -41,16 +45,21 @@ export class GameComponent implements OnInit {
       if (arr.indexOf(r) === -1) arr.push(r);
     }
 
+    let place = [];
+    while (place.length < 3) {
+      let r = Math.floor(Math.random() * 3) + 1;
+      if (place.indexOf(r) === -1) place.push(r);
+    }
+
     this.a = arr[0];
     this.b = arr[1];
     this.c = arr[2];
+    this.d = place[0];
+    this.e = place[1];
+    this.f = place[2];
 
     console.log(this.a, this.b, this.c);
-
-    let ul: any = document.querySelector('ul');
-    for (let i = ul.children.length; i >= 0; i--) {
-      ul.appendChild(ul.children[(Math.random() * i) | 0]);
-    }
+    console.log(this.d, this.e, this.f);
 
     this.count = this.count + 1;
     console.log(this.count);
