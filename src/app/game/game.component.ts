@@ -7,7 +7,7 @@ import { ActorsService } from '../actors.service';
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
-  public actors: any = [];
+  public actors: Array<any> ;
 
   constructor(private _actorsService: ActorsService) {}
 
